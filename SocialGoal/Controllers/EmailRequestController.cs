@@ -31,6 +31,7 @@ namespace SocialGoal.Web.Controllers
 
         public ActionResult AddGroupUser()
         {
+            //
             Guid groupIdToken = (Guid)TempData["grToken"];
             var groupId = securityTokenService.GetActualId(groupIdToken);
             GroupUser newGroupUser = new GroupUser()
