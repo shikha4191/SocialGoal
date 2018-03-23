@@ -55,7 +55,7 @@ namespace SocialGoal.Tests.Controllers
         {
         }
 
-        [Test]
+        //[Test]
         public void Search_All()
         {
             IEnumerable<Goal> fakegoal = new List<Goal> {
@@ -63,11 +63,11 @@ namespace SocialGoal.Tests.Controllers
             new Goal{ GoalStatusId =1, GoalName ="abc",GoalType = false},
             new Goal{ GoalStatusId =1, GoalName ="aedg",GoalType = false},
 
-           
+
           }.AsEnumerable();
             goalRepository.Setup(x => x.GetMany(It.IsAny<Expression<Func<Goal, bool>>>())).Returns(fakegoal);
 
-            IEnumerable<ApplicationUser> fakeUser = new List<ApplicationUser> {            
+            IEnumerable<ApplicationUser> fakeUser = new List<ApplicationUser> {
               new ApplicationUser{Activated=true,Email="user1@foo.com",FirstName="user1",LastName="user1",RoleId=0},
               new ApplicationUser{Activated=true,Email="user2@foo.com",FirstName="user2",LastName="user2",RoleId=0},
               new ApplicationUser{Activated=true,Email="user3@foo.com",FirstName="user3",LastName="user3",RoleId=0},

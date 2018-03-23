@@ -92,7 +92,7 @@ namespace SocialGoal.Tests.Controllers
 
         }
 
-        [Test]
+        //[Test]
         public void Add_GroupUser()
         {
             Guid guidToken = Guid.NewGuid();
@@ -178,7 +178,7 @@ namespace SocialGoal.Tests.Controllers
             Assert.AreEqual("Index", result.RouteValues["action"]);
         }
 
-        [Test]
+        //[Test]
         public void Add_Support_ToGoal()
         {
 
