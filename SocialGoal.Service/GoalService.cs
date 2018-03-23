@@ -23,7 +23,7 @@ namespace SocialGoal.Service
         IEnumerable<Goal> GetTop20GoalsofFollowing(string userid);
         IEnumerable<Goal> GetTop20Goals(string userid);
         IEnumerable<Goal> GetMyGoals(string userid);
-        IEnumerable<ValidationResult> CanAddGoal(Goal newGoal,IUpdateService updateService);
+        IEnumerable<ValidationResult> CanAddGoal(Goal newGoal, IUpdateService updateService);
         Goal GetGoal(int id);
         void CreateGoal(Goal goal);
         void EditGoal(Goal goalToEdit);
@@ -176,16 +176,16 @@ namespace SocialGoal.Service
                     }
                     if (flag == 1)
                     {
-                        yield return new ValidationResult("EndDate", Resources.EndDateNotValid + " "+Updates[0].UpdateDate.ToString("dd-MMM-yyyy"));
+                        yield return new ValidationResult("EndDate", Resources.EndDateNotValid + " " + Updates[0].UpdateDate.ToString("dd-MMM-yyyy"));
                     }
                     else if (status == 1)
                     {
-                        yield return new ValidationResult("StartDate", Resources.StartDate + " "+Updates[0].UpdateDate.ToString("dd-MMM-yyyy"));
+                        yield return new ValidationResult("StartDate", Resources.StartDate + " " + Updates[0].UpdateDate.ToString("dd-MMM-yyyy"));
                     }
                 }
-               
 
-                
+
+
             }
         }
 
@@ -199,7 +199,13 @@ namespace SocialGoal.Service
 
         public void SaveGoal()
         {
+            validateGoal();
             unitOfWork.Commit();
+        }
+
+        public bool validateGoal()
+        {
+            return true;
         }
 
         #endregion
