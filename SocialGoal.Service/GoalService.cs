@@ -198,11 +198,15 @@ namespace SocialGoal.Service
 
 
         public void SaveGoal()
-        {            
+        {
+            validateGoal();
             unitOfWork.Commit();
         }
 
-        
+        public bool validateGoal()
+        {
+            return true;
+        }
 
         #endregion
     }
