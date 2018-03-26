@@ -198,8 +198,7 @@ namespace SocialGoal.Service
 
 
         public void SaveGoal()
-        {    
-            //
+        {            
             unitOfWork.Commit();
         }
 
